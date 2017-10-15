@@ -3,12 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="material.client.SimpleObject">
+    <bean class="material.SimpleObject">
         <property name="accountService" ref="accountService"/>
     </bean>
 
     <bean id="accountService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
         <property name="serviceUrl" value="rmi://localhost:1199/AccountService"/>
-        <property name="serviceInterface" value="material.server.AccountService"/>
+        <property name="serviceInterface" value="material.AccountService"/>
     </bean>
 </beans>

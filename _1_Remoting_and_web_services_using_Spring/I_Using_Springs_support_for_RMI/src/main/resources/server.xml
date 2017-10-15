@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="accountService" class="material.server.AccountServiceImpl">
+    <bean id="accountService" class="material.AccountServiceImpl">
         <!-- any additional properties, maybe a DAO? -->
     </bean>
 
@@ -12,7 +12,7 @@
         <!-- does not necessarily have to be the same name as the bean to be exported -->
         <property name="serviceName" value="AccountService"/>
         <property name="service" ref="accountService"/>
-        <property name="serviceInterface" value="material.server.AccountService"/>
+        <property name="serviceInterface" value="material.AccountService"/>
         <!-- defaults to 1099 -->
         <property name="registryPort" value="1199"/>
     </bean>

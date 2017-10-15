@@ -1,4 +1,4 @@
-package material.server;
+package material;
 
 import java.util.List;
 

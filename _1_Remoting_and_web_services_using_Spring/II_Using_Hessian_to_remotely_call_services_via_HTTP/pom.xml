@@ -1,33 +1,67 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Remoting and web services using Spring</groupId>
-  <artifactId>Using Hessian to remotely call services via HTTP</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <groupId>Remoting_and_web_services_using_Spring</groupId>
+    <artifactId>Using_Hessian_to_remotely_call_services_via_HTTP</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-  <name>Using Hessian to remotely call services via HTTP Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+    <name>Using Hessian to remotely call services via HTTP Maven Webapp</name>
+    <url>http://maven.apache.org</url>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>4.3.9.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>4.3.9.RELEASE</version>
-    </dependency>
-  </dependencies>
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 
-  <build>
-    <finalName>Using Hessian to remotely call services via HTTP</finalName>
-  </build>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.51</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>Using Hessian to remotely call services via HTTP</finalName>
+        <plugins>
+            <plugin>
+                <!-- 配置tomcat 插件 -->
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port>
+                    <path>/server</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

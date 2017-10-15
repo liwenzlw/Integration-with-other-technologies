@@ -23,14 +23,16 @@
     <url-pattern>/remoting/*</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>accountExporter</servlet-name>
-    <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
-  </servlet>
+  <!-- 方式2 start 取消注释生效 -->
+  <!--<servlet>-->
+    <!--<servlet-name>accountExporter</servlet-name>-->
+    <!--<servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>-->
+  <!--</servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>accountExporter</servlet-name>
-    <url-pattern>/remoting/AccountService</url-pattern>
-  </servlet-mapping>
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>accountExporter</servlet-name>-->
+    <!--<url-pattern>/remoting/AccountService</url-pattern>-->
+  <!--</servlet-mapping>-->
+  <!-- 方式2 end -->
 
 </web-app>

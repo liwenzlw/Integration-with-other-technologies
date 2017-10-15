@@ -1,6 +1,4 @@
-package material.client;
-
-import material.server.AccountService;
+package material;
 
 public class SimpleObject {
 

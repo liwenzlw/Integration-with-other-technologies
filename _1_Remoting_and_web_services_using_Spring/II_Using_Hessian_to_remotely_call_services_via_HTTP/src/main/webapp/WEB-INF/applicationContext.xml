@@ -3,4 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="accountService2" class="material.AccountServiceImpl">
+        <!-- any additional properties, maybe a DAO? -->
+        <property name="exportAPIType" value="方式2"/>
+    </bean>
+    <!-- 暴露hessian接口方式2-->
+    <bean name="accountExporter" class="org.springframework.remoting.caucho.HessianServiceExporter">
+        <property name="service" ref="accountService2"/>
+        <property name="serviceInterface" value="material.AccountService"/>
+    </bean>
+
 </beans>

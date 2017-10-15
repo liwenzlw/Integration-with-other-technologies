@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>Remoting and web services using Spring</groupId>
-    <artifactId>Using Hessian to remotely call services via HTTP Client</artifactId>
+    <groupId>Remoting_and_web_services_using_Spring</groupId>
+    <artifactId>Using_Hessian_to_remotely_call_services_via_HTTP_Client</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -25,9 +25,43 @@
             <artifactId>spring-webmvc</artifactId>
             <version>4.3.9.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.51</version>
+        </dependency>
+        <dependency>
+            <groupId>Remoting_and_web_services_using_Spring</groupId>
+            <artifactId>Using_Hessian_to_remotely_call_services_via_HTTP</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.8.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.8</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>Using Hessian to remotely call services via HTTP Client</finalName>
+        <finalName>Using Hessian to remotely call services via HTTP</finalName>
+        <plugins>
+            <plugin>
+                <!-- 配置tomcat 插件 -->
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8081</port>
+                    <path>/client</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

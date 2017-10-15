@@ -1,8 +1,7 @@
 
-import material.client.SimpleObject;
+import material.SimpleObject;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 public class RunClientRun {
     public static void main(String[] args) {
